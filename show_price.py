@@ -14,7 +14,7 @@ mycol = mydb['datanew']
 def main(token):
     datas = mycol.find({})
     median = []
-    vwa = [] 
+    vwa = []
     coinbase = []
     chainlink = []
     timestamp = []
