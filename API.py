@@ -396,12 +396,6 @@ def test(token):
     for val in docs:
         if val != None :
             req.append(val)
-    docs = req
-    for doc in docs: 
-        if doc['source'] == 'COINBASE':
-            price_coinbase = doc['price']
-        if doc['source'] == 'CHAINLINK':
-            price_chainlink = doc['price']
     data = {
         'data' : docs,
         'token' : token,
