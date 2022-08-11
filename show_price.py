@@ -10,7 +10,7 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',
 myclient = pymongo.MongoClient("mongodb+srv://hoangks5:YrfvDz4Mt8xrrHxi@cluster0.tcbxc.mongodb.net/",tlsCAFile=certifi.where())
 mydb = myclient['price']
 mycol = mydb['datanew']
-
+ 
 def main(token):
     datas = mycol.find({})
     median = []
