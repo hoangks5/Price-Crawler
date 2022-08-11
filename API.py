@@ -401,7 +401,9 @@ def test(token):
         'token' : token,
         'timestamp' : timest,
         'price_median' : cal_median(docs),
-        'price_volume_weighted_average' : cal_volume_weighted_average(docs)
+        'price_volume_weighted_average' : cal_volume_weighted_average(docs),
+        ''
+        
     }
     return data
 
