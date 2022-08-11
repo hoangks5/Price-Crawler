@@ -362,13 +362,22 @@ def vwa(token):
         'price_volume_weighted_average' : cal_volume_weighted_average(docs)
     }
     return data
+
+def cal_gaussian_noise(docs):
+    req = []
+    for val in docs:
+        if val != None :
+            req.append(val['price'])
+    return np.random.normal(np.mean(req),np.std(req),1)[0]
+        
+
 def test(token):
     timest = time.time()
     docs = []
     token = token.upper()+'-USD'
     th = []
-    price_coinbase = 0
-    price_chainlink = 0
+    price_coinbase = []
+    price_chainlink = []
     def t1(token):
             docs.append(get_binance_price(token))
     def t2(token):
@@ -384,9 +393,9 @@ def test(token):
     def t7(token):
             docs.append(get_gateio_price(token))
     def t8(token):
-        price_coinbase = get_coinbase_price(token)
+        price_coinbase.append(get_coinbase_price(token)['price'])
     def t9(token):
-        price_chainlink = get_chainlink_price(token)
+        price_chainlink.append(get_chainlink_price(token)['price'])
     th.append(threading.Thread(target=t1,args={token,}))
     th.append(threading.Thread(target=t2,args={token,}))
     th.append(threading.Thread(target=t3,args={token,}))
@@ -400,18 +409,15 @@ def test(token):
         ths.start()
     for ths in th:
         ths.join()
-    req = []
-    for val in docs:
-        if val != None :
-            req.append(val)
     data = {
         'data' : docs,
         'token' : token,
         'timestamp' : timest,
         'price_median' : cal_median(docs),
         'price_volume_weighted_average' : cal_volume_weighted_average(docs),
-        'price_coinbase' : price_coinbase,
-        'price_chainlink' : price_chainlink
+        'price_coinbase' : price_coinbase[0],
+        'price_chainlink' : price_chainlink[0],
+        'price_gaussian_noise' : cal_gaussian_noise(docs)
     }
     return data
 
