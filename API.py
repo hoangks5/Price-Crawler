@@ -400,10 +400,14 @@ def test(token):
         ths.start()
     for ths in th:
         ths.join()
+    # clear data None
     req = []
     for val in docs:
         if val != None :
             req.append(val)
+    docs = req
+    # gaussian noise
+    price_gaussian_noise = np.random.normal(np.mean(docs), np.std(docs), 1)
     data = {
         'data' : docs,
         'token' : token,
@@ -411,8 +415,8 @@ def test(token):
         'price_median' : cal_median(docs),
         'price_volume_weighted_average' : cal_volume_weighted_average(docs),
         'price_coinbase' : price_coinbase,
-        'price_chainlink' : price_chainlink
-        
+        'price_chainlink' : price_chainlink,
+        'price_gaussian_noise' : price_gaussian_noise[0]
     }
     return data
 
