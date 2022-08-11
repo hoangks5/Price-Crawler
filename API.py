@@ -369,6 +369,21 @@ def cal_gaussian_noise(docs):
         if val != None :
             req.append(val['price'])
     return np.random.normal(np.mean(req),np.std(req),1)[0]
+
+
+def choice_max(docs):
+    req = []
+    for val in docs:
+        if val != None :
+            req.append(val['price'])
+    return max(req)
+
+def choice_min(docs):
+    req = []
+    for val in docs:
+        if val != None :
+            req.append(val['price'])
+    return min(req)
         
 
 def test(token):
@@ -417,7 +432,10 @@ def test(token):
         'price_volume_weighted_average' : cal_volume_weighted_average(docs),
         'price_coinbase' : price_coinbase[0],
         'price_chainlink' : price_chainlink[0],
-        'price_gaussian_noise' : cal_gaussian_noise(docs)
+        'price_gaussian_noise' : cal_gaussian_noise(docs),
+        'price_max' : choice_max(docs),
+        'price_min' : choice_min(docs)
+        
     }
     return data
 
