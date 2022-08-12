@@ -436,7 +436,7 @@ def test(token):
         'price_max' : choice_max(docs),
         'price_min' : choice_min(docs)
     }
-    return data 
+    return data
 
 
 
