@@ -53,8 +53,8 @@ def main1(token):
             coinbase.append(data['data']['coinbase'])
             chainlink.append(data['data']['chainlink'])
             timestamp.append(data['data']['timestamp'])
-            
-    median = np.array(median)
+
+    median = np.array(median) 
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
