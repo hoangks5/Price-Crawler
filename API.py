@@ -8,6 +8,7 @@ import numpy as np
 from flask import Flask
 import json
 from flask_cors import CORS
+import random
 # BTC-USD, ETH-USD, BNB-USD, DOGE-USD, LINK-USD, UNI-USD, SOL-USD, MATIC-USD, LUNA-USD, DOT-USD, ATOM-USD
 # Connection MongoDB
 
