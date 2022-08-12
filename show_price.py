@@ -18,7 +18,7 @@ def main(token):
     coinbase = []
     chainlink = []
     timestamp = []
-    for data in datas:
+    for data in datas: 
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
             vwa.append(data['data']['price_volume_weighted_average'])
@@ -35,7 +35,7 @@ def main(token):
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
     frame = plt.gca()
-    frame.axes.get_xaxis().set_visible(False)
+    frame.axes.get_xaxis().set_visible(False) 
 
 
 
