@@ -48,6 +48,7 @@ def main1(token):
     timestamp = []
     price_min = []
     price_max = []
+    pric
     for data in datas:
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
