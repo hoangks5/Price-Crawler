@@ -48,6 +48,7 @@ def main1(token):
     timestamp = []
     price_min = []
     price_max = []
+    
     for data in datas:
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
@@ -57,7 +58,7 @@ def main1(token):
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
-    
+
     median = np.array(median)
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
