@@ -18,6 +18,9 @@ def main(token):
     coinbase = []
     chainlink = []
     timestamp = []
+    price_min = []
+    price_max = []
+    price_noise = []
     for data in datas: 
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
