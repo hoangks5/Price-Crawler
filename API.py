@@ -383,7 +383,7 @@ def choice_min(docs):
     for val in docs:
         if val != None :
             req.append(val['price'])
-    return min(req)
+    return min(req)+np.random(-0,2*req,0,2*req)
         
 
 def test(token):
