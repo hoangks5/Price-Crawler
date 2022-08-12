@@ -21,7 +21,7 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'BNB-USD', 'DOGE-USD', 'LINK-USD', 'UNI-USD', 'S
 def test(token):
     headers = {"Authorization": "ai_market",}
     json_data = {"data": token.split('-')[0]}
-    h = requests.post('http://127.0.0.1:5000/test',headers=headers,json=json_data).json()
+    h = requests.post('http://127.0.0.1:5000/price',headers=headers,json=json_data).json()
     if h['data'] != None:
         mycol.insert_one(h)
 while True:    
