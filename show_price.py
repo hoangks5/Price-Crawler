@@ -18,30 +18,24 @@ def main(token):
     coinbase = []
     chainlink = []
     timestamp = []
-    price_min = []
-    price_max = []
-    price_noise = []
-    for data in datas:
+    for data in datas: 
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
             vwa.append(data['data']['price_volume_weighted_average'])
-            coinbase.append(data['data']['price_coinbase'])
-            chainlink.append(data['data']['price_chainlink'])
+            coinbase.append(data['data']['coinbase'])
+            chainlink.append(data['data']['chainlink'])
             timestamp.append(data['data']['timestamp'])
-            price_min.append(data['data']['price_min'])
-            price_max.append(data['data']['price_max'])
-            price_noise.append(data['data']['price_gaussian_noise'])
-
     median = np.array(median)
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
     coinbase = np.array(coinbase)
-    plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink,price_min,price_max,price_noise)
+    plt.subplot(2,4,TOKENS.index(token)+1)
+    plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink)
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
     frame = plt.gca()
-    frame.axes.get_xaxis().set_visible(False)
+    frame.axes.get_xaxis().set_visible(False) 
 
 
 
@@ -71,7 +65,6 @@ def main1(token):
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
     coinbase = np.array(coinbase)
-    plt.subplot(4,2,TOKENS.index(token))
     plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink,price_min,price_max,price_noise)
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
@@ -82,5 +75,5 @@ def main1(token):
 
 for token in TOKENS:
     main(token)
-plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
+plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max'))
 plt.show()
