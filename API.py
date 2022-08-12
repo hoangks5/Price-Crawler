@@ -435,7 +435,6 @@ def test(token):
         'price_gaussian_noise' : cal_gaussian_noise(docs),
         'price_max' : choice_max(docs),
         'price_min' : choice_min(docs)
-        
     }
     return data
 
