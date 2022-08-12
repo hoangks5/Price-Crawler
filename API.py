@@ -216,7 +216,7 @@ TOKEN_IDS_COINGECKO = {'BTC': 'bitcoin',
 
 
 
-def get_coingecko_price(symbol) :
+def get_coingecko_price(symbol):
     token = symbol.split('-')[0]
     symbol = TOKEN_IDS_COINGECKO[symbol.split("-")[0]]
     url = "https://api.coingecko.com/api/v3/simple/price?ids="+symbol+"&vs_currencies=usd&include_24hr_vol=true&include_last_updated_at=true"
