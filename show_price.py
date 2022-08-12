@@ -71,6 +71,3 @@ for token in TOKENS:
     main(token)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink'))
 plt.show()
-""" main1('ETH-USD')
-plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink'))
-plt.show() """
