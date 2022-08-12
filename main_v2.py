@@ -28,7 +28,7 @@ while True:
     th = []
     for token in TOKENS:
         th.append(threading.Thread(target=test,args={token,}))
-    for ths in th:
+    for ths in th: 
         ths.start()
         time.sleep(0.2)
     time.sleep(300)
