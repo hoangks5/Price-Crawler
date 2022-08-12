@@ -36,7 +36,7 @@ TOKENS = ['BTC-USD', 'ETH-USD', 'BNB-USD', 'DOGE-USD', 'LINK-USD', 'UNI-USD', 'S
     # Timestamp : Realtime
 
 
-def get_binance_price(symbol):
+def get_binance_price(symbol): 
     symbol = symbol.split("-")[0]
     url = "https://api.binance.com/api/v3/ticker/24hr?symbol="+symbol+"USDT"
     time_start = time.time()
