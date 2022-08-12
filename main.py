@@ -285,4 +285,4 @@ while True:
         th.append(threading.Thread(target=get_chainlink_price,args={token,}))
     for ths in th:
         ths.start()
-    time.sleep(180) 
+    time.sleep(180)
