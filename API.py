@@ -376,7 +376,7 @@ def choice_max(docs):
     for val in docs:
         if val != None :
             req.append(val['price'])
-    return max(req)
+    return max(req)+np.random(-0,2*req,0,2*req)
 
 def choice_min(docs):
     req = []
