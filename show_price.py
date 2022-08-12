@@ -57,7 +57,7 @@ def main1(token):
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
-
+    
     median = np.array(median)
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
