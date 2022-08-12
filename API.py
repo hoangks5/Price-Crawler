@@ -320,7 +320,7 @@ def median(token):
         'price_median' : cal_median(docs)
     }
     return data
-
+ 
 
 def vwa(token):
     timest = time.time()
