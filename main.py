@@ -272,6 +272,7 @@ def get_chainlink_price(symbol):
     #mycol.insert_one(avg)
     print(avg)
     return avg
+    
 
 while True:    
     th = []
