@@ -56,6 +56,7 @@ def main1(token):
             chainlink.append(data['data']['chainlink'])
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
+            price_min.append(data['data']['price_min'])
 
     median = np.array(median)
     vwa = np.array(vwa)
