@@ -71,6 +71,7 @@ def main1(token):
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
     coinbase = np.array(coinbase)
+    plt.subplot(4,2,TOKENS.index(token))
     plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink,price_min,price_max,price_noise)
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
