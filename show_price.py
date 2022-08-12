@@ -53,8 +53,8 @@ def main1(token):
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
             vwa.append(data['data']['price_volume_weighted_average'])
-            coinbase.append(data['data']['coinbase'])
-            chainlink.append(data['data']['chainlink'])
+            coinbase.append(data['data']['price_coinbase'])
+            chainlink.append(data['data']['price_chainlink'])
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
