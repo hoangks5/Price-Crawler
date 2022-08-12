@@ -15,7 +15,7 @@ def main(token):
     datas = mycol.find({})
     median = []
     vwa = []
-    coinbase = []
+    coinbase = [] 
     chainlink = []
     timestamp = []
     for data in datas: 
