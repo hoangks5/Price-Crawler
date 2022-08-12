@@ -58,7 +58,7 @@ def main1(token):
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
-            price_noise.append(data['data']['price_max'])
+            price_noise.append(data['data']['price_gaussian_noise'])
 
     median = np.array(median)
     vwa = np.array(vwa)
