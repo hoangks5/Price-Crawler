@@ -240,7 +240,7 @@ def get_coingecko_price(symbol) :
     #mycol.insert_one(avg)
     print(avg)
     return avg
-    
+     
 # CHAINLINK
 
 # Doc: https://docs.chain.link/docs/single-word-response/
