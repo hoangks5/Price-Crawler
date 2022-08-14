@@ -11,7 +11,7 @@ myclient = pymongo.MongoClient("mongodb+srv://hoangks5:YrfvDz4Mt8xrrHxi@cluster0
 mydb = myclient['price']
 mycol = mydb['datanew']
  
-def main(token):
+def main(token): 
     datas = mycol.find({})
     median = []
     vwa = []
