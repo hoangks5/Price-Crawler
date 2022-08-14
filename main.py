@@ -238,7 +238,7 @@ def get_coingecko_price(symbol) :
         'delay': time_start - response.json()[symbol]['last_updated_at']
     }
     #mycol.insert_one(avg)
-    print(avg)
+    print(avg) 
     return avg
      
 # CHAINLINK
