@@ -51,7 +51,7 @@ def get_binance_price(symbol):
         'delay': time_stop - time_start
     }
     return avg
-    
+     
     
 
 # COINBASE
