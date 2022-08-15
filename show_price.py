@@ -35,7 +35,7 @@ def main(token):
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
-    coinbase = np.array(coinbase)
+    coinbase = np.array(coinbase) 
     plt.subplot(2,4,TOKENS.index(token)+1)
     plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink,timestamp,price_max,timestamp,price_min,timestamp,price_noise)
     plt.title(token.split('-')[0])
