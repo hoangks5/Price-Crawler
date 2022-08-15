@@ -327,7 +327,7 @@ def vwa(token):
     docs = []
     token = token.upper()+'-USD'
     th = []
-    def t1(token):
+    def t1(token): 
             docs.append(get_binance_price(token))
     def t2(token):
             docs.append(get_coinbase_price(token))
