@@ -81,4 +81,4 @@ def main1(token):
 for token in TOKENS:
     main(token)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-plt.show()
+plt.show() 
