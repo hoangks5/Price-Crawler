@@ -377,14 +377,14 @@ def choice_max(docs):
     for val in docs:
         if val != None :
             req.append(val['price'])
-    return max(req)+random.randint(0,200)*0.01*max(req)
+    return max(req)+random.randint(0,200)*0.001*max(req)
 
 def choice_min(docs):
     req = []
     for val in docs:
         if val != None :
             req.append(val['price'])
-    return min(req)-float(random.randint(0,200))*0.01*min(req)
+    return min(req)-float(random.randint(0,200))*0.001*min(req)
         
 
 def test(token):
