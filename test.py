@@ -11,7 +11,7 @@ from flask_cors import CORS
 import API
 
 def response_body(status, data=None, status_code=200):
-    status = int(status)
+    status = int(status) 
 
     if status == 1:
         response_body_json = {
