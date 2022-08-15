@@ -380,7 +380,7 @@ def choice_max(docs):
     return max(req)+random.randint(0,200)*0.001*max(req)
 
 def choice_min(docs):
-    req = []
+    req = [] 
     for val in docs:
         if val != None :
             req.append(val['price'])
