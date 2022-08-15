@@ -171,7 +171,7 @@ def get_coinmarketcap_price(symbol):
     parameters = {
         'symbol' : symbol.split('-')[0]
     }
-    header = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY' : '945d7953-c96a-40f8-820a-6f6f4679c26f'}
+    header = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY' : '3fe6464e-8a86-4ad7-8c95-d7beaef15bad'}
     time_start = time.time()
     response = requests.get(url=url,params=parameters,headers=header)
     avg = {
