@@ -16,6 +16,7 @@ def main(token):
     median = []
     vwa = []
     coinbase = []
+    
     chainlink = []
     timestamp = []
     price_min = []
