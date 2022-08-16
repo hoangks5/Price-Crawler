@@ -93,6 +93,5 @@ plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min
 #plt.show()
 main1('DOGE-USD')
 plt.figure(3)
-
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
 plt.show()
