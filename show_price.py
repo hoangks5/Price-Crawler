@@ -97,3 +97,4 @@ def t3():
     plt.show()
 
 th = []
+th.append(threading.Thread(target=t1))
