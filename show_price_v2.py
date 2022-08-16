@@ -91,8 +91,8 @@ plt.gca().legend(('Median','Volume Weighted Average','Min','Max','Noise'))
 plt.show()
 
 
-plt.title('COINBASE')
+plt.title('CHAINLINK')
 for token in TOKENS:
-    coinbase_benmark(token)
+    chainlink_benmark(token)
 plt.gca().legend(('Median','Volume Weighted Average','Min','Max','Noise'))
 plt.show()
