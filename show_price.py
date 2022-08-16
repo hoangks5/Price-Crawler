@@ -84,10 +84,10 @@ plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min
 plt.show() """
 main1('ETH-USD')
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-plt.show()
+#plt.show()
 main1('LINK-USD')
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-plt.show()
+#plt.show()
 main1('DOGE-USD')
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
 plt.show()
