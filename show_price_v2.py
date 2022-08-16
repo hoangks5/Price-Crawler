@@ -29,9 +29,10 @@ def coinbase_benmark(token):
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
             price_noise.append(data['data']['price_gaussian_noise'])
+
+    timestamp = np.array(timestamp)
     median = np.array(median) - np.array(coinbase)
     vwa = np.array(vwa) - np.array(coinbase)
-    timestamp = np.array(timestamp)
     coinbase = np.array(coinbase) - np.array(coinbase)
     plt.subplot(2,4,TOKENS.index(token)+1)
     plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,timestamp,price_max,timestamp,price_min,timestamp,price_noise)
