@@ -84,13 +84,14 @@ def chainlink_benmark(token):
 
 
 
-
+plt.title('COINBASE')
 for token in TOKENS:
     coinbase_benmark(token)
 plt.gca().legend(('Median','Volume Weighted Average','Min','Max','Noise'))
 plt.show()
 
 
+plt.title('COINBASE')
 for token in TOKENS:
     coinbase_benmark(token)
 plt.gca().legend(('Median','Volume Weighted Average','Min','Max','Noise'))
