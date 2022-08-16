@@ -77,7 +77,7 @@ def main1(token):
     frame = plt.gca()
     frame.axes.get_xaxis().set_visible(False)
 
-
+ 
 for token in TOKENS:
     main(token)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
