@@ -102,3 +102,5 @@ th.append(threading.Thread(target=t2))
 th.append(threading.Thread(target=t3))
 for ths in th:
     ths.start()
+for ths in th:
+    ths.join()
