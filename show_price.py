@@ -98,3 +98,5 @@ def t3():
 
 th = []
 th.append(threading.Thread(target=t1))
+th.append(threading.Thread(target=t2))
+th.append(threading.Thread(target=t3))
