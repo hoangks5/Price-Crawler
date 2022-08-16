@@ -29,7 +29,7 @@ def coinbase_benmark(token):
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
             price_noise.append(data['data']['price_gaussian_noise'])
-    median = np.array(median)
+    median = np.array(median)-np.array(coinbase)
     vwa = np.array(vwa)
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
