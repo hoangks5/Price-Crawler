@@ -31,7 +31,6 @@ def coinbase_benmark(token):
             price_noise.append(data['data']['price_gaussian_noise'])
 
     timestamp = np.array(timestamp)
-    coinbase = np.array(coinbase) - np.array(coinbase)
     median = np.array(median) - np.array(coinbase)
     vwa = np.array(vwa) - np.array(coinbase)
     price_min = np.array(price_min) - np.array(coinbase)
