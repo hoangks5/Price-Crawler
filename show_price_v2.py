@@ -39,7 +39,7 @@ def coinbase_benmark(token):
     price_noise = np.array(price_noise) - np.array(coinbase)
 
     plt.subplot(2,4,TOKENS.index(token)+1)
-    plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,price_min,
+    plt.plot(timestamp,median,timestamp,vwa,price_min,
             timestamp,price_max,timestamp,price_noise)
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
