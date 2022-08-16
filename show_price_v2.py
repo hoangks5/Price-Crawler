@@ -46,20 +46,8 @@ def coinbase_benmark(token):
     frame.axes.get_xaxis().set_visible(False)
 
 
-import matplotlib.pyplot as plt
-import pymongo
-import time
-import certifi
-import numpy as np
-
-TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',  'DOT-USD', 'ATOM-USD']
-
-
-myclient = pymongo.MongoClient("mongodb+srv://hoangks5:YrfvDz4Mt8xrrHxi@cluster0.tcbxc.mongodb.net/",tlsCAFile=certifi.where())
-mydb = myclient['price']
-mycol = mydb['datanew']
  
-def coinbase_benmark(token): 
+def chainlink_benmark(token): 
     datas = mycol.find({})
     median = [] 
     vwa = []
