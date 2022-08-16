@@ -369,6 +369,7 @@ def cal_gaussian_noise(docs):
     for val in docs:
         if val != None :
             req.append(val['price'])
+    # https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html
     return np.random.normal(np.mean(req),np.std(req),1)[0]
 
 
