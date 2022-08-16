@@ -43,7 +43,7 @@ def coinbase_benmark(token):
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
     frame = plt.gca()
-    frame.axes.get_xaxis().set_visible(False) 
+    frame.axes.get_xaxis().set_visible(False)
 
 
 
