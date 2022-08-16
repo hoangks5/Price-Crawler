@@ -3,7 +3,6 @@ import pymongo
 import time
 import certifi
 import numpy as np
-import threading
 
 TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',  'DOT-USD', 'ATOM-USD']
 
@@ -83,24 +82,12 @@ def main1(token):
     main(token)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
 plt.show() """
-def t1():
-    main1('ETH-USD')
-    plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-    plt.show()
-def t2():
-    main1('LINK-USD')
-    plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-    plt.show()
-def t3():
-    main1('DOGE-USD')
-    plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-    plt.show()
-
-th = []
-th.append(threading.Thread(target=t1))
-th.append(threading.Thread(target=t2))
-th.append(threading.Thread(target=t3))
-for ths in th:
-    ths.start()
-for ths in th:
-    ths.join()
+main1('ETH-USD')
+plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
+plt.show()
+main1('LINK-USD')
+plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
+plt.show()
+main1('DOGE-USD')
+plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
+plt.show()
