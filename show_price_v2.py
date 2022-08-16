@@ -73,13 +73,13 @@ def main1(token):
     chainlink = np.array(chainlink)
     timestamp = np.array(timestamp)
     coinbase = np.array(coinbase)
-    plt.plot(timestamp,median,timestamp,vwa,timestamp,coinbase,timestamp,chainlink,
-            timestamp,price_min,timestamp,price_max,timestamp,price_noise)
+    plt.plot(timestamp,median,timestamp,vwa,timestamp,price_min,
+            timestamp,price_max,timestamp,price_noise)
     plt.title(token.split('-')[0])
     plt.ylabel('USD')
     frame = plt.gca()
     frame.axes.get_xaxis().set_visible(False)
 for token in TOKENS:
     coinbase_benmark(token)
-plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
+plt.gca().legend(('Median','Volume Weighted Average','Min','Max','Noise'))
 plt.show()
