@@ -83,15 +83,11 @@ def main1(token):
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
 plt.show() """
 main1('ETH-USD')
-plt.figure(1)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-#plt.show()
+plt.show()
 main1('LINK-USD')
-plt.figure(2)
-
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
-#plt.show()
+plt.show()
 main1('DOGE-USD')
-plt.figure(3)
 plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
 plt.show()
