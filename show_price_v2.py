@@ -60,7 +60,7 @@ def chainlink_benmark(token):
         if data['data']['token'] == token:
             median.append(data['data']['price_median'])
             vwa.append(data['data']['price_volume_weighted_average'])
-            coinbase.append(data['data']['price_coinbase'])
+            coinbase.append(data['data']['price_chainlink'])
             timestamp.append(data['data']['timestamp'])
             price_min.append(data['data']['price_min'])
             price_max.append(data['data']['price_max'])
