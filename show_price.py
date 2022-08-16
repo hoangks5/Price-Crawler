@@ -3,6 +3,7 @@ import pymongo
 import time
 import certifi
 import numpy as np
+import threading
 
 TOKENS = ['BTC-USD', 'ETH-USD', 'DOGE-USD', 'LINK-USD',  'SOL-USD', 'MATIC-USD',  'DOT-USD', 'ATOM-USD']
 
