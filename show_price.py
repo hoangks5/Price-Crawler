@@ -95,3 +95,5 @@ def t3():
     main1('DOGE-USD')
     plt.gca().legend(('Median','Volume Weighted Average','Coinbase','Chainlink','Min','Max','Noise'))
     plt.show()
+
+th = []
