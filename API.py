@@ -5,9 +5,7 @@ import threading
 import certifi
 from datetime import datetime
 import numpy as np
-from flask import Flask
 import json
-from flask_cors import CORS
 import random
 # BTC-USD, ETH-USD, BNB-USD, DOGE-USD, LINK-USD, UNI-USD, SOL-USD, MATIC-USD, LUNA-USD, DOT-USD, ATOM-USD
 # Connection MongoDB
@@ -279,115 +277,6 @@ def cal_volume_weighted_average(docs):
         total_volume += row['volume24h']
     return total_price/total_volume
 
-def median(token):
-    timest = time.time()
-    docs = []
-    token = token.upper()+'-USD'
-    th = []
-    def t1(token):
-            docs.append(get_binance_price(token))
-    def t2(token):
-            docs.append(get_coinbase_price(token))
-    def t3(token):
-            docs.append(get_chainlink_price(token))
-    def t4(token):
-            docs.append(get_kucoin_price(token))
-    def t5(token):
-            docs.append(get_coinmarketcap_price(token))
-    def t6(token):
-            docs.append(get_coingecko_price(token))
-    def t7(token):
-            docs.append(get_gateio_price(token))
-    th.append(threading.Thread(target=t1,args={token,}))
-    th.append(threading.Thread(target=t2,args={token,}))
-    th.append(threading.Thread(target=t3,args={token,}))
-    th.append(threading.Thread(target=t4,args={token,}))
-    th.append(threading.Thread(target=t5,args={token,}))
-    th.append(threading.Thread(target=t6,args={token,}))
-    th.append(threading.Thread(target=t7,args={token,}))
-    for ths in th:
-        ths.start()
-    for ths in th:
-        ths.join()
-    req = []
-    for val in docs:
-        if val != None :
-            req.append(val)
-    docs = req
-    data = {
-        'token' : token,
-        'timestamp' : timest,
-        'price_median' : cal_median(docs)
-    }
-    return data
- 
-
-def vwa(token):
-    timest = time.time()
-    docs = []
-    token = token.upper()+'-USD'
-    th = []
-    def t1(token): 
-            docs.append(get_binance_price(token))
-    def t2(token):
-            docs.append(get_coinbase_price(token))
-    def t3(token):
-            docs.append(get_chainlink_price(token))
-    def t4(token):
-            docs.append(get_kucoin_price(token))
-    def t5(token):
-            docs.append(get_coinmarketcap_price(token))
-    def t6(token):
-            docs.append(get_coingecko_price(token))
-    def t7(token):
-            docs.append(get_gateio_price(token))
-    th.append(threading.Thread(target=t1,args={token,}))
-    th.append(threading.Thread(target=t2,args={token,}))
-    th.append(threading.Thread(target=t3,args={token,}))
-    th.append(threading.Thread(target=t4,args={token,}))
-    th.append(threading.Thread(target=t5,args={token,}))
-    th.append(threading.Thread(target=t6,args={token,}))
-    th.append(threading.Thread(target=t7,args={token,}))
-    for ths in th:
-        ths.start()
-    for ths in th:
-        ths.join()
-    req = []
-    for val in docs:
-        if val != None :
-            req.append(val)
-    docs = req
-    data = {
-        'token' : token,
-        'timestamp' : timest,
-        'price_volume_weighted_average' : cal_volume_weighted_average(docs)
-    }
-    return data
-
-def cal_gaussian_noise(docs):
-    req = []
-    for val in docs:
-        if val != None :
-            req.append(val['price'])
-    # https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html
-    return np.random.normal(np.mean(req),np.std(req),1)[0]
-
-
-def choice_max(docs):
-    req = []
-    for val in docs:
-        if val != None :
-            req.append(val['price'])
-    return max(req)
-
-def choice_min(docs):
-    req = [] 
-    for val in docs:
-        if val != None :
-            req.append(val['price'])
-    return min(req)
-        
-
 def test(token):
     timest = time.time()
     docs = []
@@ -431,15 +320,9 @@ def test(token):
         'token' : token,
         'timestamp' : timest,
         'price_median' : cal_median(docs),
-        'price_volume_weighted_average' : cal_volume_weighted_average(docs),
-        'price_coinbase' : price_coinbase[0],
-        'price_chainlink' : price_chainlink[0],
-        'price_gaussian_noise' : cal_gaussian_noise(docs),
-        'price_max' : choice_max(docs),
-        'price_min' : choice_min(docs)
+        'price_volume_weighted_average' : cal_volume_weighted_average(docs)
     }
     return data
-
 
 
 
